@@ -7,6 +7,6 @@ const App = () => {
                 <NavBar/>
                 <ItemListContainer greeting="Acá van las fotos de Nina"/>
             </header>);
-                        }
+                  }
 
 export default App
