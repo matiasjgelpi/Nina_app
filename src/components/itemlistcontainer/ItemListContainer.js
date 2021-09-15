@@ -5,9 +5,10 @@ const ItemListContainer = ({greeting}) => {
     return (
         <div>
             <p className="font-weight-bold font-italic">{greeting}</p>
-            <ItemCount stock="80" initial="0"/>
+            <ItemCount stock="10" initial="1" onAdd={(cantItems)=>{ cantItems <= "0" ? console.log("no hay stock disponible") : console.log(cantItems + " items agregados al carrito")}} />
         </div>
     )
 }
 
 export default ItemListContainer 
+

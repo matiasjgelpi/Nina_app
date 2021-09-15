@@ -6,15 +6,8 @@ import "./style.css"
 const ItemCount = ({stock, initial,  onAdd}) => {
 
     const [contador, setContador] = useState(initial);
+     
 
-
-    onAdd = (cantItems) => {
-        if(cantItems === "0"){
-        console.log("no hay stock disponible")}
-        else {
-        console.log(cantItems +" items agregados al carrito")}
-    }
-    
     const setInputValue = (operacion) => {
         const input = document.getElementById("input-contador")
        if(operacion ==="sumar"){
