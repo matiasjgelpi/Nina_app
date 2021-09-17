@@ -5,7 +5,7 @@ const App = () => {
     return (<header>
                <h1>Nina App</h1> 
                 <NavBar/>
-                <ItemListContainer greeting="Acá van las fotos de Nina"/>
+                <ItemListContainer greeting=""/>
             </header>);
                   }
 

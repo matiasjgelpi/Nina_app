@@ -1,12 +1,38 @@
+import {useEffect, useState} from "react"
 import "bootstrap/dist/css/bootstrap.min.css"
-import ItemCount from "../itemcount/ItemCount"
+// import ItemCount from "../itemcount/ItemCount"
+import ItemList from "../itemlist/ItemList"
+
+
+let productosIniciales = [{key:"producto1", precio:50, img:"acá va la imagen"},{key:"producto2", precio:50, img:"acá va la imagen"},{key:"producto3", precio:50, img:"acá va la imagen"}]
 
 const ItemListContainer = ({greeting}) => {
+
+    const [productos, setProductos] = useState("")
+
+    useEffect(() => {
+
+     const simulacionPedido = new Promise((resolver) => {
+        setTimeout(() => {
+            resolver(productosIniciales)
+            },2000)
+        
+     }) 
+     
+        simulacionPedido.then(resultado =>{
+            setProductos(productosIniciales)
+     })
+       
+
+    },[])
+
+
     return (
-        <div>
-            <p className="font-weight-bold font-italic">{greeting}</p>
-            <ItemCount stock="10" initial="1" onAdd={(cantItems)=>{ cantItems <= "0" ? console.log("no hay stock disponible") : console.log(cantItems + " items agregados al carrito")}} />
-        </div>
+        
+        <>            
+            <ItemList array={productos} />
+        </>
+        
     )
 }
 
