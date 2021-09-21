@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import ItemList from "../itemlist/ItemList"
 
 
-let productosIniciales = [{key:"producto1", precio:50, img:"acá va la imagen"},{key:"producto2", precio:50, img:"acá va la imagen"},{key:"producto3", precio:50, img:"acá va la imagen"}]
+let productosIniciales = [{id:"1", nombre:"producto1", precio:50, img:"acá va la imagen"},{id:"2", nombre:"producto2", precio:50, img:"acá va la imagen"},{id:"3", nombre:"producto3", precio:50, img:"acá va la imagen"}]
 
 const ItemListContainer = ({greeting}) => {
 

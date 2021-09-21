@@ -1,20 +1,22 @@
-import Item  from "../item/Item"
+import Item from "../item/Item";
 
-const ItemList = ({array}) => {
-   
-    let mostrar;
+const ItemList = ({ array }) => {
 
-    if(array === ""){
-        mostrar = "no hay nada para mostrar"}
-        else{ 
-        mostrar =  array.map(item => <Item producto= {item.key} precio={item.precio} imagen={item.img}/>)}
-   
-   return (
+  return (
     <>
-        {mostrar}
+      <ul>
+        {array === "" ? "no hay nada para mostrar" : array.map((item) => (
+              <li key={item.id}>
+                <Item
+                  producto={item.nombre}
+                  precio={item.precio}
+                  imagen={item.img}
+                />
+              </li>
+            ))}
+      </ul>
     </>
-   )
+  );
+};
 
-}
-
-export default ItemList
+export default ItemList;
