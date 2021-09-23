@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-// import ItemCount from "../itemcount/ItemCount"
 import ItemList from "../itemlist/ItemList";
 
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
@@ -11,7 +10,7 @@ const ItemListContainer = ({ greeting }) => {
   }, []);
 
   const pedidoProductos = () => {
-    fetch("https://fakestoreapi.com/products/category/electronics")
+    fetch("https://fakestoreapi.com/products/category/jewelery")
       .then((res) => res.json())
       .then((data) => {
         setProductos(data);

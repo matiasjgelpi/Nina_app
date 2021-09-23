@@ -1,7 +1,8 @@
 import NavBar from "./components/navbar/NavBar";
-import ItemListContainer from "./components/itemlistcontainer/ItemListContainer";
 import {BrowserRouter} from "react-router-dom";
 import React from "react";
+import ItemListContainer from "./components/itemlistcontainer/ItemListContainer";
+import ItemDetailContainer from "./components/itemdetailcontainer/ItemDetailContainer";
 
 const App = () => {
   return (
@@ -9,7 +10,8 @@ const App = () => {
       <header>
         <h1>Nina App</h1>
         <NavBar />
-        <ItemListContainer greeting="" />
+        <ItemListContainer/>
+        <ItemDetailContainer/>
       </header>
     </BrowserRouter>
   );

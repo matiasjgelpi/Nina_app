@@ -15,7 +15,6 @@ const ItemList = ({array}) => {
                   producto={item.title}
                   precio={item.price}
                   imagen={item.image}
-                  descripcion = {item.description}
                 />
               </li>
             ))}
