@@ -1,16 +1,21 @@
 import Item from "../item/Item";
+import "./style.css"
 
-const ItemList = ({ array }) => {
+const ItemList = ({array}) => {
+
 
   return (
     <>
-      <ul>
-        {array === "" ? "no hay nada para mostrar" : array.map((item) => (
+      <ul className="itemList">
+
+        {array.length === 0  ? "cargando..." :
+        array.map((item) => (
               <li key={item.id}>
                 <Item
-                  producto={item.nombre}
-                  precio={item.precio}
-                  imagen={item.img}
+                  producto={item.title}
+                  precio={item.price}
+                  imagen={item.image}
+                  descripcion = {item.description}
                 />
               </li>
             ))}

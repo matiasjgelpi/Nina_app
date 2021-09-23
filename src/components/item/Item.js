@@ -1,15 +1,20 @@
-import "bootstrap/dist/css/bootstrap.min.css"
+import "./style.css";
 
-const Item = ({ producto, precio, imagen }) => {
-    return (
-        <div className="container">
-            <div className="row col-md-5"><img alt={imagen} /></div>
-            <div className="row col-md-5"><h1>{producto}</h1></div>
-            <div className="row col-md-5"><h1>{precio}</h1></div>
+const Item = ({ producto, precio, imagen, descripcion }) => {
+  return (
+    <div className="card container-fluid">
+      <img src={imagen} className="card-img-top" alt=""/>
+      <div className="card-body">
+        <h5 className="card-title">{producto}</h5>
+        <p className="card-text">
+          {descripcion} Precio: {precio}.
+        </p>
+        <a href="/" className="btn btn-primary">
+          Agregar al carrito
+        </a>
+      </div>
+    </div>
+  );
+};
 
-
-        </div>
-    )
-}
-
-export default Item
+export default Item;
