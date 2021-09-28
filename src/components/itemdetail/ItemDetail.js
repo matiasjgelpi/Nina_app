@@ -1,7 +1,16 @@
 import "./style.css";
 import { Link } from "react-router-dom";
+import ItemCount from "../itemcount/ItemCount";
+
 
 const ItemDetail = ({ producto }) => {
+
+  const onAdd = (cantidadAAgregar) => {
+    console.log("Agregar " + cantidadAAgregar + " al carrito")
+  }
+
+
+
   return (
     <>
       {producto.length === 0 ? (
@@ -18,6 +27,7 @@ const ItemDetail = ({ producto }) => {
             <p className="card-text">
               {producto.description} Precio: {producto.price}.
             </p>
+            <ItemCount stock={20} initial={1} onAdd={onAdd}/>
             <Link to="/" className="btn btn-primary">
               Volver
             </Link>

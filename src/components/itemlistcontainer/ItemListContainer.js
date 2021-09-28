@@ -7,7 +7,7 @@ import { getUrl } from "../utils/getUrl";
 const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);
   const { cat } = useParams();
-  console.log(cat)
+
 
   useEffect(() => {
     pedidoProductos(cat);
