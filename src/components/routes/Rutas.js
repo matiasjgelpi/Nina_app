@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ItemListContainer from "../itemlistcontainer/ItemListContainer";
 import ItemDetailContainer from "../itemdetailcontainer/ItemDetailContainer";
 import NavBar from "../navbar/NavBar";
-// import ItemDetail from "../itemdetail/ItemDetail";
+
 
 export default function Rutas() {
   return (
