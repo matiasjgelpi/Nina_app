@@ -1,4 +1,4 @@
-import Item from "../item/Item";
+import ItemCard from "../item/ItemCard";
 import "./style.css"
 
 const ItemList = ({array}) => {
@@ -10,8 +10,9 @@ const ItemList = ({array}) => {
 
         {array.length === 0  ? "cargando..." :
         array.map((item) => (
-              <li key={item.id}>
-                <Item
+              <li key={item.id} >
+                <ItemCard
+                  id={item.id}
                   producto={item.title}
                   precio={item.price}
                   imagen={item.image}

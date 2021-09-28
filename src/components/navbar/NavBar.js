@@ -1,35 +1,34 @@
-
 import CartWidget from "../cartwidget/CartWidget";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-ligh">
-      <img className="navbar-brand" src="" alt="Logo-nina" />
+      <NavLink to="/">
+        <h1>Nina APP</h1>
+      </NavLink>
       <ul className="navbar-nav">
         <li className="nav-item">
-          <Link className="nav-link" to="../../public/index.html">
-            Quines soy
-          </Link>
+          <NavLink className="nav-link" to="/category/:jewelery">
+            Joyeria
+          </NavLink>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="../../public/index.html">
-            Fotos
-          </Link>
+          <NavLink className="nav-link" to="/category/:electronics">
+            Electronica
+          </NavLink>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="../../public/index.html">
-            Carrito
-          </Link>
+          <NavLink className="nav-link" to="/">
+            <CartWidget />
+          </NavLink>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="../../public/index.html">
+          <NavLink className="nav-link" to="../../public/index.html">
             Contacto
-          </Link>
+          </NavLink>
         </li>
-        <li>
-          <CartWidget />
-        </li>
+        <li></li>
       </ul>
     </nav>
   );

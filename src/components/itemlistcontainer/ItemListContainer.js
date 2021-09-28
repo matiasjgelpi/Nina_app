@@ -1,21 +1,29 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router";
 import ItemList from "../itemlist/ItemList";
+import { getUrl } from "../utils/getUrl";
 
 
 const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);
+  const { cat } = useParams();
+  console.log(cat)
 
   useEffect(() => {
-    pedidoProductos();
-  }, []);
+    pedidoProductos(cat);
+    
+  }, [cat]);
 
-  const pedidoProductos = () => {
-    fetch("https://fakestoreapi.com/products/category/jewelery")
+   const pedidoProductos = (categoria) => {
+
+
+    fetch(getUrl(categoria))
       .then((res) => res.json())
       .then((data) => {
         setProductos(data);
       });
   };
+
 
   return (
     <>
