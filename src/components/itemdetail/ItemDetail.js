@@ -27,17 +27,18 @@ const ItemDetail = ({ producto }) => {
             <p className="card-text">
               {producto.description} Precio: {producto.price}.
             </p>
-            <ItemCount stock={20} initial={1} onAdd={onAdd} />
-            <Link to="/" className="btn btn-primary">
-              Volver
-            </Link>
+
             {carrito === 0 ? (
-              ""
+              <ItemCount stock={20} initial={1} onAdd={onAdd} />
             ) : (
               <Link to="/cart" className="btn btn-primary">
                 Finalizar Compra
               </Link>
             )}
+
+            <Link to="/" className="btn btn-primary">
+              Volver
+            </Link>
           </div>
         </div>
       )}
