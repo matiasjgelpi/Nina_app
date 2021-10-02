@@ -4,14 +4,12 @@ import "./style.css";
 import { Link } from "react-router-dom";
 import ItemCount from "../itemcount/ItemCount";
 
-
 const ItemDetail = ({ producto }) => {
-  const {addItem} = useContext(cartContext)
+  const { addItem } = useContext(cartContext);
 
   const onAdd = (cantidad) => {
-    addItem(producto, cantidad)
-  }
-  // console.log(cart);
+    addItem(producto, cantidad);
+  };
 
   return (
     <>
@@ -29,12 +27,12 @@ const ItemDetail = ({ producto }) => {
             <p className="card-text">
               {producto.description} Precio: {producto.price}.
             </p>
-            
+
             <ItemCount stock={20} initial={1} onAdd={onAdd} />
             <Link to="/cart" className="btn btn-primary">
               Finalizar Compra
             </Link>
-            
+
             <Link to="/" className="btn btn-primary">
               Volver
             </Link>
@@ -42,7 +40,7 @@ const ItemDetail = ({ producto }) => {
         </div>
       )}
     </>
-  
-  )};
+  );
+};
 
 export default ItemDetail;

@@ -5,13 +5,14 @@ const cartContext = createContext();
 const { Provider } = cartContext;
 
 export const CartProvider = ({ children }) => {
+  
   const [cart, setCart] = useState([]);
 
   const addItem = (item, quantity) => {
     if (isInCart(item)) {
       cart.find((it) => it === item).cantidad += parseInt(quantity);
     } else {
-      item["cantidad"] = quantity;
+      item["cantidad"] = parseInt(quantity);
       cart.push(item);
     }
     console.log(cart);
@@ -31,7 +32,6 @@ export const CartProvider = ({ children }) => {
 
   const valueProvider = {
     addItem: addItem,
-    cart: cart,
   };
 
   return <Provider value={valueProvider}>{children}</Provider>;
