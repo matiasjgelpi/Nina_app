@@ -5,8 +5,9 @@ const cartContext = createContext();
 const { Provider } = cartContext;
 
 export const CartProvider = ({ children }) => {
-  
+
   const [cart, setCart] = useState([]);
+
 
   const addItem = (item, quantity) => {
     if (isInCart(item)) {
@@ -18,12 +19,13 @@ export const CartProvider = ({ children }) => {
     console.log(cart);
   };
 
-  const removeItem = (item) => {
-    cart.push(item);
-  };
+  // const removeItem = (item) => {
+  //   cart.pop(item);
+  // };
 
-  const clear = () => {
-    setCart([]);
+  const clearCart = () => {
+    cart.length = 0
+    setCart(cart);
   };
 
   const isInCart = (art) => {
@@ -32,6 +34,7 @@ export const CartProvider = ({ children }) => {
 
   const valueProvider = {
     addItem: addItem,
+    clearCart : clearCart
   };
 
   return <Provider value={valueProvider}>{children}</Provider>;

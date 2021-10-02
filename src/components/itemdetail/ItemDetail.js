@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import ItemCount from "../itemcount/ItemCount";
 
 const ItemDetail = ({ producto }) => {
-  const { addItem } = useContext(cartContext);
+  const { addItem , clearCart} = useContext(cartContext);
 
   const onAdd = (cantidad) => {
     addItem(producto, cantidad);
@@ -29,7 +29,7 @@ const ItemDetail = ({ producto }) => {
             </p>
 
             <ItemCount stock={20} initial={1} onAdd={onAdd} />
-            <Link to="/cart" className="btn btn-primary">
+            <Link to="/cart" className="btn btn-primary" onClick = {clearCart}>
               Finalizar Compra
             </Link>
 
