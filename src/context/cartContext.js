@@ -5,36 +5,54 @@ const cartContext = createContext();
 const { Provider } = cartContext;
 
 export const CartProvider = ({ children }) => {
-
   const [cart, setCart] = useState([]);
-
+  const cartAux = [...cart];
+  
 
   const addItem = (item, quantity) => {
+  
     if (isInCart(item)) {
-      cart.find((it) => it === item).cantidad += parseInt(quantity);
+      cartAux.find((it) => it.id === item.id).cantidad += parseInt(quantity);
+      setCart(cartAux)
     } else {
       item["cantidad"] = parseInt(quantity);
-      cart.push(item);
+      cartAux.push(item);
+      setCart(cartAux)
     }
-    console.log(cart);
   };
 
-  // const removeItem = (item) => {
-  //   cart.pop(item);
-  // };
+  const removeItem = (art) => {
+    const findArt = cartAux.find((it) => it.id === art.id);
+    cartAux.pop(findArt);
+    setCart(cartAux);
+  };
 
   const clearCart = () => {
-    cart.length = 0
-    setCart(cart);
+    cartAux.length = 0;
+    setCart(cartAux);
   };
 
   const isInCart = (art) => {
-    return cart.includes(art);
+    const findArt = cartAux.find((it) => it.id === art.id);
+    return cartAux.includes(findArt);
   };
+
+  const cartCounter = () => {
+    return cartAux.length !== 0 ? cartAux.map((art) => art.cantidad).reduce((a,b) => a+b) : 0 
+  };
+
+  const cartTotal =() => {
+    
+    return cartAux.length !== 0 ? cartAux.map((art) => art.price*art.cantidad).reduce((a,b) => a+b) : 0
+  }
 
   const valueProvider = {
     addItem: addItem,
-    clearCart : clearCart
+    clearCart: clearCart,
+    cart: cartAux,
+    removeItem: removeItem,
+    cartCounter: cartCounter,
+    cartTotal : cartTotal
   };
 
   return <Provider value={valueProvider}>{children}</Provider>;

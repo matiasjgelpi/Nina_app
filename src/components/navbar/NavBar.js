@@ -1,7 +1,15 @@
 import CartWidget from "../cartwidget/CartWidget";
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import cartContext from "../../context/cartContext";
+
+
+
 
 const NavBar = () => {
+
+  const { cart } = useContext(cartContext);
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-ligh">
       <NavLink to="/">
@@ -18,9 +26,9 @@ const NavBar = () => {
             Electronica
           </NavLink>
         </li>
-        <li className="nav-item">
-          <NavLink className="nav-link" to="/">
-            <CartWidget />
+        <li className="nav-item" style={cart.length === 0 ? {display:"none"}  : {display:"block"}}>
+          <NavLink className="nav-link"  to="/cart">
+            <CartWidget/>
           </NavLink>
         </li>
         <li className="nav-item">
