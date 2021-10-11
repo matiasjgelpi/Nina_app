@@ -1,12 +1,12 @@
-export const getUrl = (categoria) => {
+export const getUrl = (funcion, categoria) => {
   switch (categoria) {
-    case ":jewelery":
-      return "https://fakestoreapi.com/products/category/jewelery";
+    case ":category1":
+      return funcion.where("category", "==", "category1").get()
 
-    case ":electronics":
-      return "https://fakestoreapi.com/products/category/electronics";
+    case ":category2":
+      return funcion.where("category", "==", "category2").get() 
 
     default:
-      return "https://fakestoreapi.com/products";
+      return funcion.get()  
   }
 };

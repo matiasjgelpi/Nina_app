@@ -5,21 +5,23 @@ import { Link } from "react-router-dom";
 
 export default function Cart() {
   const { cart, removeItem, cartTotal } = useContext(cartContext);
-
+  
   return (
     <div className="container">
       {cart.length === 0 ? (
         <p>No elementos en el carrito</p>
       ) : (
         cart.map((art) =>
+          
           <div className="row" key={art.id}>
-            <div className="col">{art.title} </div>
+            <div className="col">{art.name} </div>
             <div className="col">{art.cantidad} </div>
             <div className="col">precio: {art.price} </div>
             <div className="col">
             <button className="btn btn-primary" onClick={() => {removeItem(art)}}>X</button>
             </div>
           </div>
+         
         ) 
         
       )

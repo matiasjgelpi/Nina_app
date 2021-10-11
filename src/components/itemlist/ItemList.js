@@ -13,9 +13,9 @@ const ItemList = ({array}) => {
               <li key={item.id} >
                 <ItemCard
                   id={item.id}
-                  producto={item.title}
+                  producto={item.name}
                   precio={item.price}
-                  imagen={item.image}
+                  imagen={item.img}
                 />
               </li>
             ))}

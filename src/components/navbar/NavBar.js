@@ -17,13 +17,13 @@ const NavBar = () => {
       </NavLink>
       <ul className="navbar-nav">
         <li className="nav-item">
-          <NavLink className="nav-link" to="/category/:jewelery">
-            Joyeria
+          <NavLink className="nav-link" to="/category/:category1">
+            Categoria 1
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/category/:electronics">
-            Electronica
+          <NavLink className="nav-link" to="/category/:category2">
+            Categoria 2
           </NavLink>
         </li>
         <li className="nav-item" style={cart.length === 0 ? {display:"none"}  : {display:"block"}}>

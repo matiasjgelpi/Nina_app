@@ -18,12 +18,12 @@ const ItemDetail = ({ producto }) => {
       ) : (
         <div className="card container-fluid">
           <img
-            src={producto.image}
+            src={producto.img}
             className="card-img-top img-detail"
             alt=""
           />
           <div className="card-body">
-            <h5 className="card-title">{producto.title}</h5>
+            <h5 className="card-title">{producto.name}</h5>
             <p className="card-text">
               {producto.description} Precio: {producto.price}.
             </p>
