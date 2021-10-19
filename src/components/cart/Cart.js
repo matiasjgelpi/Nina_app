@@ -2,9 +2,10 @@ import React from "react";
 import { useContext } from "react";
 import cartContext from "../../context/cartContext";
 import { Link } from "react-router-dom";
+import { getOrden } from "../utils/getOrden";
 
 export default function Cart() {
-  const { cart, removeItem, cartTotal } = useContext(cartContext);
+  const { cart, removeItem, cartTotal } = useContext(cartContext)
   
   return (
     <div className="container">
@@ -18,7 +19,7 @@ export default function Cart() {
             <div className="col">{art.cantidad} </div>
             <div className="col">precio: {art.price} </div>
             <div className="col">
-            <button className="btn btn-primary" onClick={() => {removeItem(art)}}>X</button>
+            <button className="btn btn-primary" onClick={() => {removeItem(art.id)}}>X</button>
             </div>
           </div>
          
@@ -31,6 +32,7 @@ export default function Cart() {
       <Link to="/" className="btn btn-primary col">
         Volver
       </Link>
+      <button className="btn btn-primary" onClick={() => {getOrden(cart, cartTotal())}}>Finalizar Compra</button>
     </div>
   );
 }

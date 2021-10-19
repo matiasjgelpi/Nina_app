@@ -12,21 +12,20 @@ export const CartProvider = ({ children }) => {
   const addItem = (item, quantity) => {
   
     if (isInCart(item)) {
-      console.log(item.id)
+      // console.log(item.id)
       cartAux.find((it) => it.id === item.id).cantidad += parseInt(quantity);
       setCart(cartAux)
     } else {
       item["cantidad"] = parseInt(quantity);
       cartAux.push(item);
-      console.log(cartAux)
+      // console.log(cartAux)
       setCart(cartAux)
     }
   };
 
-  const removeItem = (art) => {
-    const findArt = cartAux.find((it) => it.id === art.id);
-    cartAux.pop(findArt);
-    setCart(cartAux);
+  const removeItem = (id) => {    
+    const nuevoCart = cartAux.filter((it) => it.id !== id);
+    setCart(nuevoCart);
   };
 
   const clearCart = () => {
