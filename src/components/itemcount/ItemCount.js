@@ -22,8 +22,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 <button className="btn btn-danger col-md-3" onClick={()=>{setInputValue("restar")}}>-</button>
                 <input  className= "col-md-6 text-center" id="input-contador" type="number" min={initial}  max={stock} defaultValue={initial}/>
                 <button className="btn btn-danger col-md-3" onClick={()=>{setInputValue("sumar")}}>+</button>
-                <button className="btn btn-outline-danger" onClick={() => {console.log(contador)
-                                                                              onAdd(contador)}}>Agregar al carrito</button>
+                <button className="btn btn-outline-danger" onClick={() => {onAdd(contador)}}>Agregar al carrito</button>
             </div>
         </div>
     )

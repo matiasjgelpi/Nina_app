@@ -3,9 +3,25 @@ import { useContext } from "react";
 import cartContext from "../../context/cartContext";
 import { Link } from "react-router-dom";
 import { getOrden } from "../utils/getOrden";
-
+import { FormUser } from "../formuser/FormUser";
 export default function Cart() {
   const { cart, removeItem, cartTotal } = useContext(cartContext)
+
+  const getUser = (nombre, telefono, email) =>{
+
+    const user = {
+      name: nombre,
+      tel: telefono,
+      mail: email
+
+    }
+
+
+
+    console.log(user)
+    getOrden(user, cart, cartTotal())
+
+  }
   
   return (
     <div className="container">
@@ -22,7 +38,8 @@ export default function Cart() {
             <button className="btn btn-primary" onClick={() => {removeItem(art.id)}}>X</button>
             </div>
           </div>
-         
+                
+      
         ) 
         
       )
@@ -32,7 +49,7 @@ export default function Cart() {
       <Link to="/" className="btn btn-primary col">
         Volver
       </Link>
-      <button className="btn btn-primary" onClick={() => {getOrden(cart, cartTotal())}}>Finalizar Compra</button>
+      {cart.length === 0 ? "" : <FormUser onSubmit={getUser}/>}
     </div>
-  );
+);
 }
