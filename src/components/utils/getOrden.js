@@ -9,11 +9,6 @@ export const getOrden = (cliente,carrito, total) => {
   const coleccion = firestore.collection("ordenes");
 
   const nueva_compra = {
-    // buyer: {
-    //   name: "Matias",
-    //   tel: "1111111111",
-    //   email: "matias@mail.com",
-    // },
     buyer: cliente,
     items: carrito,
     date: firebase.firestore.Timestamp.now(),
