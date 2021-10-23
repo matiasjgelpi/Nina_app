@@ -19,7 +19,7 @@ export const getOrden = (cliente,carrito, total) => {
 
   query
     .then((res) => {
-      console.log(res.id);
+      console.log(res);
       alert("compra finalizada nro comprobante " + res.id)
     })
     .catch((error) => {
