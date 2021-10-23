@@ -3,14 +3,15 @@ import firebase from "firebase/app"
 import "firebase/firestore"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDpkmWqF4Hc769ZUDp8P907QOshQHS-P0I",
-  authDomain: "nina-app-fc48a.firebaseapp.com",
-  projectId: "nina-app-fc48a",
-  storageBucket: "nina-app-fc48a.appspot.com",
-  messagingSenderId: "409472573151",
-  appId: "1:409472573151:web:4e763aee4bdce70008936a"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID
 };
 
+console.log(process.env.REACT_APP_API_KEY)
 
 const app = firebase.initializeApp(firebaseConfig)
 export const firestore = firebase.firestore(app)
