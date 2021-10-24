@@ -53,6 +53,21 @@ export const FormProvider = ({ children }) => {
     else return false;
   };
 
+  const warningMessage = (type) => {
+        
+    switch (type) {
+      case actions.NAME:
+        return "Nombre incorrecto, ingrese sólo letras"
+      case actions.TEL:
+        return "Teléfono incorrecto, ingrese sólo números"
+      case actions.MAIL:
+        return "Formato Email incorrecto"
+      default:
+        return "";
+   
+    }
+}
+
   const handleBlur = (e, type, element) => {
     const aviso = document.getElementById(element);
     if (!validateInput(e.target.value, type)) {
@@ -79,6 +94,8 @@ export const FormProvider = ({ children }) => {
     handleSubmit: handleSubmit,
     handleChange : handleChange,
     handleBlur: handleBlur,
+    warningMessage : warningMessage
+
   };
 
   return <Provider value={valueFormProvider}>{children}</Provider>;

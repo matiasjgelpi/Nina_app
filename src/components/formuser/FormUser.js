@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import formContext from "../../context/formContext";
-import { InputFormUser } from "../inputFormUser/InputFormUser";
+import { InputFormUser } from "../inputformuser/InputFormUser";
 
 export const FormUser = ({ onSubmit }) => {
   const { handleSubmit } = useContext(formContext);

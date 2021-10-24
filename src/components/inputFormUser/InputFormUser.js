@@ -1,5 +1,6 @@
 import { useContext } from "react";
-import formContext from "../../context/formContext";
+import formContext from "../../context/formContext"
+import { InputWarning } from "../inputwarning/InputWarning";
 
 export const InputFormUser = ({ type }) => {
   const { handleChange, handleBlur } = useContext(formContext);
@@ -13,9 +14,11 @@ export const InputFormUser = ({ type }) => {
         type="text"
         placeholder={`${type}`}
       />
-      <span id={`aviso${type}`} style={{ display: "none", color: "red" }}>
+      {/* <span id={`aviso${type}`} style={{ display: "none", color: "red" }}>
         Formato incorrecto, intente nuevamente
-      </span>
+      </span> */}
+
+      <InputWarning type = {type}/>
     </div>
   );
 };
