@@ -24,8 +24,8 @@ export const CartProvider = ({ children }) => {
   };
 
   const removeItem = (id) => {    
-    const nuevoCart = cartAux.filter((it) => it.id !== id);
-    setCart(nuevoCart);
+    const newCart = cartAux.filter((it) => it.id !== id);
+    setCart(newCart);
   };
 
   const clearCart = () => {
@@ -42,8 +42,7 @@ export const CartProvider = ({ children }) => {
     return cartAux.length !== 0 ? cartAux.map((art) => art.cantidad).reduce((a,b) => a+b) : 0 
   };
 
-  const cartTotal =() => {
-    
+  const cartTotal =() => { 
     return cartAux.length !== 0 ? cartAux.map((art) => art.price*art.cantidad).reduce((a,b) => a+b) : 0
   }
 

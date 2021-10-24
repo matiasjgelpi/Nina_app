@@ -9,18 +9,7 @@ import { FormUser } from "../formuser/FormUser";
 export default function Cart() {
   const { cart, removeItem, cartTotal } = useContext(cartContext)
 
-  const getUser = (nombre, telefono, email) =>{
-
-    const user = {
-      name: nombre,
-      tel: telefono,
-      mail: email
-
-    }
-
-
-
-    console.log(user)
+  const getUser = (user) =>{
     getOrden(user, cart, cartTotal())
 
   }
