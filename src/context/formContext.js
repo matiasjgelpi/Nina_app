@@ -9,9 +9,9 @@ const { Provider } = formContext;
 
 export const FormProvider = ({ children }) => {
   const actions = {
-    NAME: "nombre",
-    TEL: "tel",
-    MAIL: "email",
+    NAME: "Nombre",
+    TEL: "Telefono",
+    MAIL: "Email",
   };
 
   const reducer = (form, action) => {
@@ -45,9 +45,9 @@ export const FormProvider = ({ children }) => {
 
   const validateForm = (form) => {
     if (
-      validateInput(form.name, "nombre") &&
-      validateInput(form.tel, "tel") &&
-      validateInput(form.email, "email")
+      validateInput(form.name, "Nombre") &&
+      validateInput(form.tel, "Telefono") &&
+      validateInput(form.email, "Email")
     )
       return true;
     else return false;
@@ -62,7 +62,7 @@ export const FormProvider = ({ children }) => {
     }
   };
 
-  const handleClick = (accion, e) => {
+  const handleChange = (accion, e) => {
     dispatch({ type: accion, payload: { value: e.target.value } });
   };
 
@@ -77,7 +77,7 @@ export const FormProvider = ({ children }) => {
 
   const valueFormProvider = {
     handleSubmit: handleSubmit,
-    handleClick: handleClick,
+    handleChange : handleChange,
     handleBlur: handleBlur,
   };
 
