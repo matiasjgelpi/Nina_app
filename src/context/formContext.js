@@ -1,4 +1,4 @@
-import { createContext, useReducer, useContext} from "react";
+import { createContext, useReducer, useContext } from "react";
 import cartContext from "../context/cartContext";
 import { getOrden } from "../components/utils/getOrden";
 import validator from "validator";
@@ -8,39 +8,77 @@ const formContext = createContext();
 const { Provider } = formContext;
 
 export const FormProvider = ({ children }) => {
+  const actions = {
+    NAME: "nombre",
+    TEL: "tel",
+    MAIL: "email",
+  };
 
-  
- 
   const reducer = (form, action) => {
     switch (action.type) {
-      case "nombre":
+      case actions.NAME:
         return { ...form, name: action.payload.value };
-      case "tel":
+      case actions.TEL:
         return { ...form, tel: action.payload.value };
-      case "email":
+      case actions.MAIL:
         return { ...form, email: action.payload.value };
       default:
         return form;
     }
   };
 
-  const { cart, cartTotal } = useContext(cartContext)
+  const { cart, cartTotal } = useContext(cartContext);
   const [form, dispatch] = useReducer(reducer, {});
 
-  const handleInput = (accion, e) => {
-    const valorInput = e.target.value;
-    console.log(validator.isEmail(valorInput));
-    dispatch({ type: accion, payload: { value: valorInput } });
+  const validateInput = (value, type) => {
+    switch (type) {
+      case actions.NAME:
+        return validator.isAlpha(value);
+      case actions.TEL:
+        return validator.isMobilePhone(value);
+      case actions.MAIL:
+        return validator.isEmail(value);
+      default:
+        return true;
+    }
+  };
+
+  const validateForm = (form) => {
+    if (
+      validateInput(form.name, "nombre") &&
+      validateInput(form.tel, "tel") &&
+      validateInput(form.email, "email")
+    )
+      return true;
+    else return false;
+  };
+
+  const handleBlur = (e, type, element) => {
+    const aviso = document.getElementById(element);
+    if (!validateInput(e.target.value, type)) {
+      aviso.style.display = "inline";
+    } else {
+      aviso.style.display = "none";
+    }
+  };
+
+  const handleClick = (accion, e) => {
+    dispatch({ type: accion, payload: { value: e.target.value } });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    getOrden(form, cart, cartTotal())
+    if (validateForm(form)) {
+      getOrden(form, cart, cartTotal());
+    } else {
+      alert("Revise los datos ingresaros");
+    }
   };
 
   const valueFormProvider = {
     handleSubmit: handleSubmit,
-    handleInput: handleInput,
+    handleClick: handleClick,
+    handleBlur: handleBlur,
   };
 
   return <Provider value={valueFormProvider}>{children}</Provider>;
