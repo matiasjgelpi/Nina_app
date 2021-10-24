@@ -2,18 +2,12 @@ import React from "react";
 import { useContext } from "react";
 import cartContext from "../../context/cartContext";
 import { Link } from "react-router-dom";
-import { getOrden } from "../utils/getOrden";
 import { FormUser } from "../formuser/FormUser";
 
 
 export default function Cart() {
-  const { cart, removeItem, cartTotal } = useContext(cartContext)
+  const {cart, removeItem, cartTotal} = useContext(cartContext)
 
-  const getUser = (user) =>{
-    getOrden(user, cart, cartTotal())
-
-  }
-  
   return (
     <div className="container">
       {cart.length === 0 ? (
@@ -40,7 +34,7 @@ export default function Cart() {
       <Link to="/" className="btn btn-primary col">
         Volver
       </Link>
-      {cart.length === 0 ? "" : <FormUser onSubmit={getUser}/>}
+      {cart.length === 0 ? "" : <FormUser/>}
     </div>
 );
 }

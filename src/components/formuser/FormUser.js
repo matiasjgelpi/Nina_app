@@ -1,44 +1,16 @@
-import { useReducer, useContext} from "react";
-import validator from "validator";
+import {useContext} from "react";
 import formContext from "../../context/formContext";
 
 
-// const reducer = (form, action) => {
-//   switch (action.type) {
-//     case "nombre":
-//       console.log(form);
-//       return { ...form, name: action.payload.value };
-//     case "tel":
-//       console.log(form);
-//       return { ...form, tel: action.payload.value };
-//     case "email":
-//       console.log(form);
-//       return { ...form, email: action.payload.value };
-//     default:
-//       return form;
-//   }
-// };
 
 export const FormUser = ({ onSubmit }) => {
 
-  // const [form, dispatch] = useReducer(reducer, {});
-
-  // const handleInput = (accion, e) => {
-  //   const valorInput = e.target.value;
-  //   console.log(validator.isEmail(valorInput))
-  //   dispatch({ type: accion, payload: { value: valorInput } });
-  // };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   onSubmit(form)
-  // };
 
   const {handleSubmit, handleInput} = useContext(formContext)
 
 
   return (
-    <form onSubmit={(e) => handleSubmit(e, onSubmit)}>
+    <form onSubmit={(e) => handleSubmit(e)}>
       <div>
         <input
           onChange={(e) => handleInput("nombre", e)}
