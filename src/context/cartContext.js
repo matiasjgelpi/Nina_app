@@ -12,13 +12,11 @@ export const CartProvider = ({ children }) => {
   const addItem = (item, quantity) => {
   
     if (isInCart(item)) {
-      // console.log(item.id)
       cartAux.find((it) => it.id === item.id).cantidad += parseInt(quantity);
       setCart(cartAux)
     } else {
       item["cantidad"] = parseInt(quantity);
       cartAux.push(item);
-      // console.log(cartAux)
       setCart(cartAux)
     }
   };

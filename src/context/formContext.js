@@ -86,7 +86,7 @@ export const FormProvider = ({ children }) => {
     if (validateForm(form)) {
       getOrden(form, cart, cartTotal());
     } else {
-      alert("Revise los datos ingresaros");
+      alert("Revise los datos ingresados");
     }
   };
 

@@ -1,0 +1,43 @@
+.navbar {
+    /* background-color :#7f89be; */
+    width: 100%;
+    position: fixed;
+    height: 50px;
+    margin-bottom: 50px
+    
+}
+
+.navbar-ul{
+    background-color :#7f89be;
+    list-style-type: none;
+    font-size: 16px;
+    padding: 15px;
+    
+    ;
+    
+}
+
+.nav-item {
+
+    display: inline-block;
+}
+
+.nav-link {
+    background-color :#7f89be;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    padding: 2px;
+    font-weight: bold;
+    
+}
+
+.nav-link:hover {
+
+    color: rosybrown;
+}
+
+#cart-widget{
+    align-items: flex-end;
+}

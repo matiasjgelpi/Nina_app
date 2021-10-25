@@ -16,11 +16,12 @@ export const getOrden = (cliente,carrito, total) => {
   };
 
   const query = coleccion.add(nueva_compra);
-
+  document.getElementById("mostrarCompra").style.display="block"
+  
   query
     .then((res) => {
       console.log(res);
-      alert("compra finalizada nro comprobante " + res.id)
+      document.getElementById("mostrarCompra").innerHTML="compra finalizada nro comprobante " + res.id
     })
     .catch((error) => {
       console.log(error);

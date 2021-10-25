@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import formContext from "../../context/formContext"
+import formContext from "../../context/formContext";
 import { InputWarning } from "../inputwarning/InputWarning";
 
 export const InputFormUser = ({ type }) => {
@@ -14,11 +14,8 @@ export const InputFormUser = ({ type }) => {
         type="text"
         placeholder={`${type}`}
       />
-      {/* <span id={`aviso${type}`} style={{ display: "none", color: "red" }}>
-        Formato incorrecto, intente nuevamente
-      </span> */}
 
-      <InputWarning type = {type}/>
+      <InputWarning type={type} />
     </div>
   );
 };

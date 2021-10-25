@@ -11,7 +11,7 @@ export default function Cart() {
   return (
     <div className="container">
       {cart.length === 0 ? (
-        <p>No elementos en el carrito</p>
+        <p>No hay elementos en el carrito</p>
       ) : (
         cart.map((art) =>
           
@@ -35,6 +35,7 @@ export default function Cart() {
         Volver
       </Link>
       {cart.length === 0 ? "" : <FormUser/>}
+      <p id="mostrarCompra" style={{ display: "none"}}>Cargando Compra...</p>
     </div>
 );
 }
