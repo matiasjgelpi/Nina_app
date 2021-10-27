@@ -3,13 +3,13 @@ import formContext from "../../context/formContext";
 import { InputWarning } from "../inputwarning/InputWarning";
 
 export const InputFormUser = ({ type }) => {
-  const { handleChange, handleBlur } = useContext(formContext);
+  const { handleChange} = useContext(formContext);
 
   return (
     <div>
       <input
         onChange={(e) => handleChange(type, e)}
-        onBlur={(e) => handleBlur(e, type, `aviso${type}`)}
+        className="form-control "
         required
         type="text"
         placeholder={`${type}`}

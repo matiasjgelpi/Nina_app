@@ -5,24 +5,22 @@ import ItemDetailContainer from "../itemdetailcontainer/ItemDetailContainer";
 import NavBar from "../navbar/NavBar";
 import Cart from "../cart/Cart";
 import { FormProvider } from "../../context/formContext";
+import { Header } from "../header/Header";
 
 export default function Rutas() {
   return (
-    <div>
+    <>
       <Router>
         <NavBar />
         <Switch>
-          <Route path="/" exact component={ItemListContainer} />
+          <Route path="/" exact component={Header} />
           <Route path="/category/:cat" exact component={ItemListContainer} />
           <Route path="/item/:id" exact component={ItemDetailContainer} />
-
           <FormProvider>
             <Route path="/cart" exact component={Cart} />
           </FormProvider>
-
-          
         </Switch>
       </Router>
-    </div>
+    </>
   );
 }

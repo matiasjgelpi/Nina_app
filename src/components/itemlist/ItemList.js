@@ -6,20 +6,24 @@ const ItemList = ({array}) => {
 
   return (
     <>
-      <ul className="itemList">
+      <div className="itemList row d-flex justify-content-around mt-5 pt-5 ">
 
-        {array.length === 0  ? "cargando..." :
+        {array.length === 0  ? 
+        
+        <div className="spinner-border text-primary" role="status"/>
+       
+ :
         array.map((item) => (
-              <li key={item.id} >
+              <div key={item.id} className="col-3" >
                 <ItemCard
                   id={item.id}
                   producto={item.name}
                   precio={item.price}
                   imagen={item.img}
                 />
-              </li>
+              </div>
             ))}
-      </ul>
+      </div>
     </>
   );
 };

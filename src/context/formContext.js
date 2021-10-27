@@ -57,9 +57,9 @@ export const FormProvider = ({ children }) => {
         
     switch (type) {
       case actions.NAME:
-        return "Nombre incorrecto, ingrese sólo letras"
+        return " Formato de Nombre incorrecto (solo caracteres alfabéticos)"
       case actions.TEL:
-        return "Teléfono incorrecto, ingrese sólo números"
+        return "Formato de teléfono incorrecto"
       case actions.MAIL:
         return "Formato Email incorrecto"
       default:
@@ -68,7 +68,7 @@ export const FormProvider = ({ children }) => {
     }
 }
 
-  const handleBlur = (e, type, element) => {
+  const inputValidation = (e, type, element) => {
     const aviso = document.getElementById(element);
     if (!validateInput(e.target.value, type)) {
       aviso.style.display = "inline";
@@ -79,6 +79,7 @@ export const FormProvider = ({ children }) => {
 
   const handleChange = (accion, e) => {
     dispatch({ type: accion, payload: { value: e.target.value } });
+    inputValidation(e, accion, `aviso${accion}`)
   };
 
   const handleSubmit = (e) => {
@@ -93,7 +94,6 @@ export const FormProvider = ({ children }) => {
   const valueFormProvider = {
     handleSubmit: handleSubmit,
     handleChange : handleChange,
-    handleBlur: handleBlur,
     warningMessage : warningMessage
 
   };

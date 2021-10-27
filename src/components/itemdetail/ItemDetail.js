@@ -12,11 +12,11 @@ const ItemDetail = ({ producto }) => {
   };
 
   return (
-    <>
+    <div className="d-flex justify-content-center mt-5 pt-5">
       {producto.length === 0 ? (
-        <p className="d-flex justify-content-center">cargando...</p>
+        <div className="spinner-border text-primary" role="status"/>
       ) : (
-        <div className="card container-fluid">
+        <div className="card">
           <img
             src={producto.img}
             className="card-img-top img-detail"
@@ -39,7 +39,7 @@ const ItemDetail = ({ producto }) => {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
