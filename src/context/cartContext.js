@@ -7,6 +7,7 @@ const { Provider } = cartContext;
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const cartAux = [...cart];
+  let compraFinalizada = {}
   
 
   const addItem = (item, quantity) => {
@@ -44,13 +45,16 @@ export const CartProvider = ({ children }) => {
     return cartAux.length !== 0 ? cartAux.map((art) => art.price*art.cantidad).reduce((a,b) => a+b) : 0
   }
 
+ 
+
   const valueProvider = {
     addItem: addItem,
     clearCart: clearCart,
     cart: cartAux,
     removeItem: removeItem,
     cartCounter: cartCounter,
-    cartTotal : cartTotal
+    cartTotal : cartTotal,
+    compraFinalizada : compraFinalizada
   };
 
   return <Provider value={valueProvider}>{children}</Provider>;

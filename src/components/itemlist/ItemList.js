@@ -1,4 +1,5 @@
 import ItemCard from "../item/ItemCard";
+import { Spinner } from "../spinner/Spinner";
 import "./style.css"
 
 const ItemList = ({array}) => {
@@ -10,7 +11,7 @@ const ItemList = ({array}) => {
 
         {array.length === 0  ? 
         
-        <div className="spinner-border text-primary" role="status"/>
+        <Spinner/>
        
  :
         array.map((item) => (
@@ -21,6 +22,7 @@ const ItemList = ({array}) => {
                   precio={item.price}
                   imagen={item.img}
                 />
+                {console.log(item.img)}
               </div>
             ))}
       </div>

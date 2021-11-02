@@ -1,23 +1,28 @@
-import React from "react";
+import { Link } from "react-router-dom";
+import CartView from "../cartView/CartView";
+import { FormUser } from "../formuser/FormUser";
 import { useContext } from "react";
 import cartContext from "../../context/cartContext";
-import { Link } from "react-router-dom";
-import { FormUser } from "../formuser/FormUser";
-import CartView from "../cartView/CartView";
+
+
 
 export default function Cart() {
-  const {cart} = useContext(cartContext)
+
+  const {clearCart } = useContext(cartContext);
+
 
   return (
-    <div className="container mt-5 pt-5 text-center">
-      {cart.length === 0 ? <span>No hay elementos en el carrito</span> : <CartView/>}
-
-      <Link to="/" className="btn btn-primary col">
-        Volver
-      </Link>
-      {cart.length === 0 ? "" : <FormUser/>}
-      <div id="mostrarCompra" style={{ display: "none"}} className="spinner-border" role="status"/>
-    </div>
-);
+    <div className="container mt-5 pt-5 ">
+      <div className="row no-wrap d-flex justify-content-center">
+        <CartView/>
+        <FormUser/>
+        <Link to="/" className="btn btn-primary col-2 m-2">
+          Volver
+        </Link>
+        <button className="btn btn-primary col-2 m-2" onClick={clearCart}>
+            Vaciar Carrito
+          </button>
+      </div>
+    </div>  
+  );
 }
-

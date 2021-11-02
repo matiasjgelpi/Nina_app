@@ -12,6 +12,7 @@ export const InputFormUser = ({ type }) => {
         className="form-control "
         required
         type="text"
+        id={`${type}`}
         placeholder={`${type}`}
       />
 

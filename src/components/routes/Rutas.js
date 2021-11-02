@@ -6,6 +6,9 @@ import NavBar from "../navbar/NavBar";
 import Cart from "../cart/Cart";
 import { FormProvider } from "../../context/formContext";
 import { Header } from "../header/Header";
+import { BuyViewContainer } from "../buyviewcontainer/BuyViewContainer";
+import { FormUser } from "../formuser/FormUser";
+
 
 export default function Rutas() {
   return (
@@ -18,6 +21,8 @@ export default function Rutas() {
           <Route path="/item/:id" exact component={ItemDetailContainer} />
           <FormProvider>
             <Route path="/cart" exact component={Cart} />
+            <Route path="/form" exact component={FormUser}/>
+            <Route path="/buy" exact component={BuyViewContainer}/>
           </FormProvider>
         </Switch>
       </Router>

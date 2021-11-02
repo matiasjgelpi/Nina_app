@@ -1,6 +1,4 @@
-import { createContext, useReducer, useContext } from "react";
-import cartContext from "../context/cartContext";
-import { getOrden } from "../components/utils/getOrden";
+import { createContext, useReducer, useState} from "react";
 import validator from "validator";
 
 const formContext = createContext();
@@ -8,11 +6,15 @@ const formContext = createContext();
 const { Provider } = formContext;
 
 export const FormProvider = ({ children }) => {
+
+  const [validForm, setValidForm] =  useState(false)
+
   const actions = {
     NAME: "Nombre",
     TEL: "Telefono",
     MAIL: "Email",
   };
+
 
   const reducer = (form, action) => {
     switch (action.type) {
@@ -27,7 +29,6 @@ export const FormProvider = ({ children }) => {
     }
   };
 
-  const { cart, cartTotal } = useContext(cartContext);
   const [form, dispatch] = useReducer(reducer, {});
 
   const validateInput = (value, type) => {
@@ -85,16 +86,22 @@ export const FormProvider = ({ children }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm(form)) {
-      getOrden(form, cart, cartTotal());
+      setValidForm(true)
+      console.log("obtenidos correctamente")
     } else {
       alert("Revise los datos ingresados");
+      return false
     }
+
   };
 
   const valueFormProvider = {
     handleSubmit: handleSubmit,
     handleChange : handleChange,
-    warningMessage : warningMessage
+    warningMessage : warningMessage,
+    validateForm : validateForm,
+    validForm : validForm,
+    form : form
 
   };
 

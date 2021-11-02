@@ -3,6 +3,7 @@ import cartContext from "../../context/cartContext";
 import "./style.css";
 import { Link } from "react-router-dom";
 import ItemCount from "../itemcount/ItemCount";
+import { Spinner } from "../spinner/Spinner";
 
 const ItemDetail = ({ producto }) => {
   const { addItem } = useContext(cartContext);
@@ -14,7 +15,7 @@ const ItemDetail = ({ producto }) => {
   return (
     <div className="d-flex justify-content-center mt-5 pt-5">
       {producto.length === 0 ? (
-        <div className="spinner-border text-primary" role="status"/>
+        <Spinner/>
       ) : (
         <div className="card">
           <img
@@ -28,7 +29,7 @@ const ItemDetail = ({ producto }) => {
               {producto.description} Precio: {producto.price}.
             </p>
 
-            <ItemCount stock={20} initial={1} onAdd={onAdd} />
+            <ItemCount stock={20} initial={1} product={producto} onAdd={onAdd} />
             <Link to="/cart" className="btn btn-primary">
               Finalizar Compra
             </Link>
