@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import cartContext from "../../context/cartContext";
-import "./style.css";
 import { Link } from "react-router-dom";
 import ItemCount from "../itemcount/ItemCount";
 import { Spinner } from "../spinner/Spinner";
@@ -12,31 +11,44 @@ const ItemDetail = ({ producto }) => {
     addItem(producto, cantidad);
   };
 
+
   return (
-    <div className="d-flex justify-content-center mt-5 pt-5">
+    <div className="d-flex justify-content-center mt-3 pt-4">
       {producto.length === 0 ? (
-        <Spinner/>
+        <Spinner />
       ) : (
-        <div className="card">
-          <img
-            src={producto.img}
-            className="card-img-top img-detail"
-            alt=""
-          />
-          <div className="card-body">
-            <h5 className="card-title">{producto.name}</h5>
-            <p className="card-text">
-              {producto.description} Precio: {producto.price}.
-            </p>
+        <div className="container">
+          <div className="row d-flex justify-content-center">
+            <div className="col-5">
+              <img src={producto.img} className="img-fluid" alt="" />
+            </div>
 
-            <ItemCount stock={20} initial={1} product={producto} onAdd={onAdd} />
-            <Link to="/cart" className="btn btn-primary">
-              Finalizar Compra
-            </Link>
+            <div className="col-5 row text-center d-flex flex-wrap align-content-center">
+              <h5 className="h3 ">{producto.name}</h5>
 
-            <Link to="/" className="btn btn-primary">
-              Volver
-            </Link>
+              <p className="">{producto.description}</p>
+              <p className="">Precio: {producto.price}.</p>
+
+              <ItemCount
+                stock={20}
+                initial={1}
+                product={producto}
+                onAdd={onAdd}
+                className=""
+              />
+            </div>
+
+            <div className="row d-flex justify-content-center col-3 mt-2">
+              <Link to="/cart" className="btn btn-danger btn-sm">
+                Ir al carrito
+              </Link>
+
+              <Link to="/" className="btn btn-danger btn-sm mt-1">
+                Volver
+              </Link>
+
+              
+            </div>
           </div>
         </div>
       )}

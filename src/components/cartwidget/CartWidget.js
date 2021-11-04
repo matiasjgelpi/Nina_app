@@ -1,13 +1,15 @@
 import { useContext} from "react";
 import cartContext from "../../context/cartContext";
-// import "../navbar/NavBar.css"
 
-const CartWidget = ({contador}) => {
+
+
+const CartWidget = () => {
   const { cartCounter } = useContext(cartContext);
+ 
 
 
   return (
-    <div  >
+    <div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"

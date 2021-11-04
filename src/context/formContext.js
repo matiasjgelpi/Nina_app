@@ -87,9 +87,8 @@ export const FormProvider = ({ children }) => {
     e.preventDefault();
     if (validateForm(form)) {
       setValidForm(true)
-      console.log("obtenidos correctamente")
     } else {
-      alert("Revise los datos ingresados");
+      alert("Alguno de los datos ingresados es incorrecto");
       return false
     }
 

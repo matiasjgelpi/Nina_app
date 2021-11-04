@@ -7,6 +7,7 @@ export const getUrl = (funcion, categoria) => {
       return funcion.where("category", "==", "category2").get() 
 
     default:
-      return funcion.get()  
+      return funcion.where("price", "<=", 300).get() 
+  
   }
 };

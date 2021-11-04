@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import "./style.css"
+import "./itemCountStyle.css"
 
 const ItemCount = ({stock, initial, onAdd}) => {
 
@@ -17,13 +17,18 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
     }
 
+    
+
     return (
         <div className="container">
             <div className="btn-group-sm row d-flex justify-content-center" role="group">
-                <button className="btn btn-primary col-1 p-1" onClick={()=>{setInputValue("restar")}}>-</button>
-                <input  className= "text-center col-2" id="input-contador" type="number" min={initial}  max={stock} defaultValue={initial}/>
-                <button className="btn btn-primary col-1 p-1 " onClick={()=>{setInputValue("sumar")}}>+</button>
-                <button className="btn btn-outline-primary" onClick={() => {onAdd(contador)}}>Agregar al carrito</button>
+                <button className="btn btn-danger col-1 p-1" onClick={()=>{setInputValue("restar")}}>-</button>
+                <input  className= "text-center col-1" id="input-contador" type="number" min={initial}  max={stock} defaultValue={initial}/>
+                <button className="btn btn-danger col-1 p-1 " onClick={()=>{setInputValue("sumar")}}>+</button>
+                
+            </div>
+            <div className="row d-flex justify-content-center">
+                 <button className="btn btn-danger mt-1 col-4"  onClick={() => {onAdd(contador)}}>Agregar al carrito</button>
             </div>
         </div>
     )

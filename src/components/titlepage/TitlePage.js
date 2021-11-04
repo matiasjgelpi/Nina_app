@@ -2,12 +2,12 @@
 import ItemListContainer from "../itemlistcontainer/ItemListContainer";
 // import logo from "../../../public/images/nina1.jpg"
 
-export const Header = () => {
+export const TitlePage = () => {
   return (
     <div className="container">
-      <div className="row header d-flex justify-content-around mt-5 pt-4">
-        <div className="col-5 imagen"><img src={"/images/nina1.jpg"} className="img-fluid" alt="" width="" height=""/></div>
-        <div className="col-5 texto">
+      <div className="row header d-flex justify-content-around mt-2 pt-5">
+        <div className="col-5 imagen d-flex flex-wrap align-content-center"><img src={"/images/nina1.jpg"} className="img-fluid" alt="" width="" height=""/></div>
+        <div className="col-5 texto d-flex flex-wrap align-content-center">
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam a
             dolore, sint vero, aliquam laudantium veritatis odit beatae ratione

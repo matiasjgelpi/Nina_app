@@ -9,7 +9,10 @@ export const BuyView = ({ mensaje }) => {
   return (
     <div className= " container text-center mt-5 pt-5">
       {mensaje === "" ? (
+        <div>
         <Spinner />
+        <p>Estamos procesando tu compra, no cierres la ventana</p>
+        </div>
       ) : (
         <div className="row  d-flex justify-content-center">
           <p>

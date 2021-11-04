@@ -16,10 +16,10 @@ export default function Cart() {
       <div className="row no-wrap d-flex justify-content-center">
         <CartView/>
         <FormUser/>
-        <Link to="/" className="btn btn-primary col-2 m-2">
+        <Link to="/" className="btn btn-danger col-2 m-2">
           Volver
         </Link>
-        <button className="btn btn-primary col-2 m-2" onClick={clearCart}>
+        <button className="btn btn-danger col-2 m-2" onClick={clearCart}>
             Vaciar Carrito
           </button>
       </div>

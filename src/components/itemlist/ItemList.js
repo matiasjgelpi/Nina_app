@@ -1,13 +1,13 @@
-import ItemCard from "../item/ItemCard";
+import ItemCard from "../itemcard/ItemCard";
 import { Spinner } from "../spinner/Spinner";
-import "./style.css"
+
 
 const ItemList = ({array}) => {
 
 
   return (
     <>
-      <div className="itemList row d-flex justify-content-around mt-5 pt-5 ">
+      <div className="itemList row d-flex justify-content-around mt-1 pt-1 ">
 
         {array.length === 0  ? 
         

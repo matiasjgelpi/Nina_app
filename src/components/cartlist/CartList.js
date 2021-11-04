@@ -17,7 +17,7 @@ export const CartList = () => {
           <td className="col-3">{art.price} </td>
           <td className="col-3">
             <button
-              className="btn btn-primary"
+              className="btn btn-danger"
               onClick={() => {
                 removeItem(art.id);
               }}
