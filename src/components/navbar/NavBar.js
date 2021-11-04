@@ -7,11 +7,14 @@ const NavBar = () => {
   const { cart } = useContext(cartContext);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark fixed-top text-uppercase font-weight-bolder">
- 
-      <div className="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
-
-      <NavLink className="navbar-brand " to="/">Tienda Nina</NavLink>
+    <nav id="Navbar" className="navbar navbar-expand-lg navbar-dark fixed-top text-uppercase font-weight-bolder">
+      <div
+        className="collapse navbar-collapse d-flex justify-content-center align-content-center"
+        id="navbarSupportedContent"
+      >
+        <NavLink className="navbar-brand " to="/">
+          Tienda Nina
+        </NavLink>
         <ul className="navbar-nav">
           <li className="nav-item">
             <NavLink className="nav-link" to="/category/:category1">
@@ -21,27 +24,33 @@ const NavBar = () => {
           <li className="nav-item">
             <NavLink className="nav-link" to="/category/:category2">
               Categoria 2
-           </NavLink>
-         </li>
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <a
+              href="https://www.binance.com/es"
+              style={{ color: "#d01c5e" }}
+              className="nav-link"
+            >
+              ¡Aceptamos Cripto!
+            </a>
+          </li>
           <li
             className="nav-item"
-            style={cart.length === 0 ? { display: "none" } : { display: "inline-block" }}
+            style={
+              cart.length === 0
+                ? { display: "none" }
+                : { display: "inline-block" }
+            }
           >
-          <NavLink className="nav-link" to="/cart">
-            <CartWidget />
-          </NavLink>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  
-  
-  
-  
-  
-  
-  
-    );
+            <NavLink className="nav-link" to="/cart">
+              <CartWidget />
+            </NavLink>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
 };
 
 export default NavBar;

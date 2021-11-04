@@ -1,20 +1,24 @@
 import { Link } from "react-router-dom";
 import { Spinner } from "../spinner/Spinner";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import cartContext from "../../context/cartContext";
 
 export const BuyView = ({ mensaje }) => {
   const { clearCart } = useContext(cartContext);
 
+  useEffect(() => {
+    clearCart();
+  }, []);
+
   return (
-    <div className= " container text-center mt-5 pt-5">
+    <div className=" container text-center mt-5 pt-5">
       {mensaje === "" ? (
         <div>
-        <Spinner />
-        <p>Estamos procesando tu compra, no cierres la ventana</p>
+          <Spinner />
+          <p>Estamos procesando tu compra, no cierres la ventana</p>
         </div>
       ) : (
-        <div className="row  d-flex justify-content-center">
+        <div className="row  d-flex justify-content-center align-content-center">
           <p>
             Gracias <b>{mensaje.buyer.name}</b>! tu compra se relizó con éxito
           </p>
@@ -24,12 +28,10 @@ export const BuyView = ({ mensaje }) => {
           <p>
             te envviamos la confirmación a: <b>{mensaje.buyer.email}</b>
           </p>
-          <Link
-          to="/"
-          onClick={() => {clearCart()}}
-          className="btn btn-primary col-2">
-          Volver al Inicio
-        </Link>
+
+          <Link to="/" className="btn btn-danger col-2">
+            Volver al Inicio
+          </Link>
         </div>
       )}
     </div>

@@ -5,7 +5,7 @@ import ItemCount from "../itemcount/ItemCount";
 import { Spinner } from "../spinner/Spinner";
 
 const ItemDetail = ({ producto }) => {
-  const { addItem } = useContext(cartContext);
+  const { addItem, cart } = useContext(cartContext);
 
   const onAdd = (cantidad) => {
     addItem(producto, cantidad);
@@ -39,7 +39,7 @@ const ItemDetail = ({ producto }) => {
             </div>
 
             <div className="row d-flex justify-content-center col-3 mt-2">
-              <Link to="/cart" className="btn btn-danger btn-sm">
+              <Link to="/cart" className="btn btn-danger btn-sm" style={cart.length === 0 ? {display : "none"} : {display:"block"}}>
                 Ir al carrito
               </Link>
 

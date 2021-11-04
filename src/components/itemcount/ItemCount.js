@@ -4,6 +4,7 @@ import "./itemCountStyle.css"
 const ItemCount = ({stock, initial, onAdd}) => {
 
     const [contador, setContador] = useState(initial);
+    
 
 
     const setInputValue = (operacion) => {
@@ -17,6 +18,13 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
     }
 
+    const itemAdded = () => {
+        document.getElementById("agregado").style.display="inline"     
+        setTimeout(() => {
+           
+            document.getElementById("agregado").style.display="none"
+        }, 500)
+    }
     
 
     return (
@@ -28,7 +36,12 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 
             </div>
             <div className="row d-flex justify-content-center">
-                 <button className="btn btn-danger mt-1 col-4"  onClick={() => {onAdd(contador)}}>Agregar al carrito</button>
+                 <button className="btn btn-danger mt-1 col-4"  onClick={() => {onAdd(contador); itemAdded()}}>Agregar al carrito</button>
+
+                 <div className="alert alert-danger mt-2 col-10" id="agregado" style={{display:"none"}} role="alert">
+                    <strong>Item Agregado</strong> 
+                </div>
+
             </div>
         </div>
     )

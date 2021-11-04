@@ -1,0 +1,24 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+  color: #ee797f;
+}
+
+#root {
+  background-color: #ffd0d0;
+}
+
+.navbar {
+  background-color: #ffb0b0;
+}
+
+.nav-link {
+  font-weight: bolder;
+}
+
+.card-body {
+  background-color: #ffb0b0;
+}
+
+

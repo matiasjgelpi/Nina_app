@@ -8,7 +8,7 @@ import cartContext from "../../context/cartContext";
 
 export default function Cart() {
 
-  const {clearCart } = useContext(cartContext);
+  const {clearCart, cart} = useContext(cartContext);
 
 
   return (
@@ -19,7 +19,7 @@ export default function Cart() {
         <Link to="/" className="btn btn-danger col-2 m-2">
           Volver
         </Link>
-        <button className="btn btn-danger col-2 m-2" onClick={clearCart}>
+        <button className="btn btn-danger col-2 m-2" style={cart.length === 0 ? {display : "none"} : {display:"block"}} onClick={clearCart}>
             Vaciar Carrito
           </button>
       </div>
