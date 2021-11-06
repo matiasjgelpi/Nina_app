@@ -7,7 +7,7 @@ const { Provider } = cartContext;
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const cartAux = [...cart];
-  let compraFinalizada = {}
+  // let compraFinalizada = {}
   
 
   const addItem = (item, quantity) => {
@@ -54,7 +54,7 @@ export const CartProvider = ({ children }) => {
     removeItem: removeItem,
     cartCounter: cartCounter,
     cartTotal : cartTotal,
-    compraFinalizada : compraFinalizada
+    // compraFinalizada : compraFinalizada
   };
 
   return <Provider value={valueProvider}>{children}</Provider>;

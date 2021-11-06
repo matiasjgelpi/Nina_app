@@ -22,7 +22,6 @@ const ItemList = ({array}) => {
                   precio={item.price}
                   imagen={item.img}
                 />
-                {console.log(item.img)}
               </div>
             ))}
       </div>

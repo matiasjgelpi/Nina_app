@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Spinner } from "../spinner/Spinner";
-import { useContext, useEffect } from "react";
+import {useContext} from "react";
 import cartContext from "../../context/cartContext";
 
 export const BuyView = ({ mensaje }) => {

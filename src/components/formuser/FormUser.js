@@ -16,7 +16,9 @@ export const FormUser = () => {
       {cart.length === 0 ? (
         ""
       ) : (
-        <div className="row d-flex justify-content-center ">        <form
+        <div className="row d-flex justify-content-center ">        
+        
+        <form
           id="formulario"
           className="form-group col-6 text-center"
           onSubmit={(e) => handleSubmit(e)}
@@ -29,10 +31,11 @@ export const FormUser = () => {
           <InputFormUser type="Telefono" />
 
           <InputFormUser type="Email" />
-        <div className="row d-flex justify-content-center  ">
-          <button className="btn btn-danger mt-2 col-3 " style={validForm ? {display:"none"} : {display:"block"}}>Comprobar datos</button>
-          <Link to="/buy" className= "btn btn-danger col-3 mt-2 mb-2" style={validForm ? {display:"block"} : {display:"none"}}>Finalizar Compra</Link>
-        </div>
+
+          <div className="row d-flex justify-content-center  ">
+            <button className="btn btn-danger mt-2 col-3 " style={validForm ? {display:"none"} : {display:"block"}}>Comprobar datos</button>
+            <Link to="/buy" className= "btn btn-danger col-3 mt-2 mb-2" style={validForm ? {display:"block"} : {display:"none"}}>Finalizar Compra</Link>
+          </div>
         </form>
         </div>
       )}

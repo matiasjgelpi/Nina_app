@@ -23,7 +23,7 @@ const ItemListContainer = () => {
       })
 
       .catch(() => {
-        console.log("error no se obtuvieron los productos");
+        alert("error no se obtuvieron los productos");
       });
   }, [cat]);
 

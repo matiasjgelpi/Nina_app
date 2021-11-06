@@ -21,7 +21,6 @@ export const BuyViewContainer = () => {
    
       query
         .then((res) => {
-          console.log("Compra finalizada con exito " + res.id)
           const id = res.id
           compraAux = {id:id, ...compraAux}
           setCompra(compraAux)
