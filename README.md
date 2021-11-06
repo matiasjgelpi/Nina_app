@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# ReactJS - Proyecto e-commerce
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[GitHub Profile](https://github.com/matiasjgelpi)
+[LinkedIn](https://www.linkedin.com/in/matiasjgelpi/)
 
-## Available Scripts
+# Presentación
 
-In the project directory, you can run:
+Soy Vanesa Burman. Este es mi proyecto final para el curso de ReactJS en [CoderHouse](https://www.coderhouse.com), cursado en Agosto de 2021.  
+La base del proyecto es un ecommerce con React, implementado con herramientas tales como React Router DOM, React Hooks, Material UI para la definición de estilos homogéneos y Firebase como base de datos. 
 
-### `yarn start`
+# Inicializando el Proyecto
+Este proyecto fue creado con  [Create React App]  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation y Uso
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Para instalar las dependencias requeridas, ejecutar `npm install`
 
-### `yarn test`
+## Uso
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para iniciar el servidor, ejecutar `npm start`. Para acceder a la App luego de inicializado el servidor, abrir http://localhost:3000 en el navegador.
 
-### `yarn build`
+## Example Usage:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Librerías/Dependencias utilizadas
 
-### `yarn eject`
+## Bootstrap
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Se utilizó Material UI como base del estilo para la página; una de las razones de la elección es para poder concentrarme en la implementación de React, finalidad principal del curso, permitiendo una interfaz homogénea, simple y coherente. En segunda instancia, la elección inicial de Material UI responde a la proyección de implementar mejoras en la web App y construirla en PWA, por lo cual el look & feel debía responder a ciertos criterios para darle un aspecto similar a una app nativa. Por último, y no menos importante, hice uso de Material UI para aprenderlo en un entorno de clase, porque es una herramienta muy solicitada y mi intención era poder familiarizarme en instancias tempranas.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## React-Router-DOM
+Para brindarle enrutamiento a la página, utilicé la colección de componentes que nos brinda React Router para las aplicaciones web. De esta forma, se otorgó navegabilidad a la app.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## React-Swipeable-Views
+Se utilizaron las funciones de SwipeableViews y AutoPlay para generar el banner/carrousel clickeable que se muestra en el Home [solo en la versión desktop]. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Storage de imágenes/assets
+Las imágenes se encuentran almacenadas en Storage de [Firebase](https://firebase.google.com/) 
