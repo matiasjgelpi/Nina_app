@@ -16,7 +16,7 @@ const ItemDetailContainer = () => {
       })
 
       .catch(() => {
-        console.log("error no se obtuvieron los productos");
+        alert("error no se obtuvieron los productos");
       });
   }, [id]);
 

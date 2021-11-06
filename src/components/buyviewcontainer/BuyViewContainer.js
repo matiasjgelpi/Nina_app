@@ -24,7 +24,6 @@ export const BuyViewContainer = () => {
           const id = res.id
           compraAux = {id:id, ...compraAux}
           setCompra(compraAux)
-          console.log(compraAux)
   
     
         })
