@@ -1,4 +1,4 @@
-#Curso de ReactJS Coderhoosue - Proyecto final e-commerce Tienda Nina
+#Curso de ReactJS Coderhouse - Proyecto final e-commerce Tienda Nina
 
 # Presentación
 
