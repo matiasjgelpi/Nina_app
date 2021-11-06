@@ -8,7 +8,7 @@ Soy Matias Gelpi. Este es mi proyecto final para el curso de ReactJS en [CoderHo
 
 ### [Mi Perfil de LinkedIn](https://www.linkedin.com/in/matiasjgelpi/)
 
-### [Link del proyecto en netlify](https://https://tiendanina.netlify.app/)
+### [Link del proyecto en netlify](https://tiendanina.netlify.app/)
 
 ### [Gif de navegación](https://drive.google.com/file/d/1dMWRdyCs_KSYizBNHNJPD6gWQLRPxUuT/view?usp=sharing)
 
