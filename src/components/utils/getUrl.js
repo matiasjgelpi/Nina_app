@@ -1,13 +1,12 @@
 export const getUrl = (funcion, categoria) => {
   switch (categoria) {
-    case ":category1":
-      return funcion.where("category", "==", "category1").get()
-
-    case ":category2":
-      return funcion.where("category", "==", "category2").get() 
-
+    case ":belleza":
+      return funcion.where("category", "==", "belleza").get();
+    case ":felicidad":
+      return funcion.where("category", "==", "felicidad").get();
+    case ":all":
+      return funcion.get();
     default:
-      return funcion.where("price", "<=", 300).get() 
-  
+      return funcion.where("price", "<=", 300).get();
   }
 };

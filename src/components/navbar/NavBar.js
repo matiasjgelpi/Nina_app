@@ -16,14 +16,19 @@ const NavBar = () => {
           Tienda Nina
         </NavLink>
         <ul className="navbar-nav">
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/category/:category1">
-              Categoria 1
+        <li className="nav-item">
+            <NavLink className="nav-link" to="/category/:all">
+              Catálogo
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/category/:category2">
-              Categoria 2
+            <NavLink className="nav-link" to="/category/:belleza">
+              Belleza
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/category/:felicidad">
+              Felicidad
             </NavLink>
           </li>
           <li className="nav-item">

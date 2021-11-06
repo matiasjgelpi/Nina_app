@@ -4,11 +4,9 @@ import { useContext, useEffect } from "react";
 import cartContext from "../../context/cartContext";
 
 export const BuyView = ({ mensaje }) => {
-  const { clearCart } = useContext(cartContext);
 
-  useEffect(() => {
-    clearCart();
-  }, []);
+const {clearCart} = useContext(cartContext)
+
 
   return (
     <div className=" container text-center mt-5 pt-5">
@@ -26,13 +24,14 @@ export const BuyView = ({ mensaje }) => {
             Comprobante: <b>{mensaje.id}</b>
           </p>
           <p>
-            te envviamos la confirmación a: <b>{mensaje.buyer.email}</b>
+            te enviamos la confirmación a: <b>{mensaje.buyer.email}</b>
           </p>
 
-          <Link to="/" className="btn btn-danger col-2">
+          <Link to="/" className="btn btn-danger col-2" onClick={() => clearCart()}>
             Volver al Inicio
           </Link>
         </div>
+        
       )}
     </div>
   );

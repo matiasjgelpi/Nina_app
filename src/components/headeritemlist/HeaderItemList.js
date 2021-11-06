@@ -6,19 +6,23 @@ export const HeaderItemList = ({ category }) => {
   let title;
 
   switch (category) {
-    case ":category1":
-      title = "Categoria 1";
-      message = "descripcion de categoria 1";
-
+    case ":belleza":
+      title = "Belleza";
+      message = "Toda la belleza que Nina puede ofrecer";
       break;
 
-    case ":category2":
-      title = "Categoria 2";
-      message = "descripcion de categoria 2";
+    case ":felicidad":
+      title = "Felicidad";
+      message = "Toda la felicidad concentrada en esta selección";
+      break;
+
+    case ":all":
+      title = "Cátalogo";
+      message = "Todos los producto juntos";
       break;
 
     default:
-      message = "Ofertas destacadas";
+      title = "NUESTRAS OFERTAS";
       show = false;
       break;
   }
@@ -27,11 +31,13 @@ export const HeaderItemList = ({ category }) => {
       <div className="row d-flex justify-content-center text-center">
         <h3
           className="h3"
-          style={show ? { display: "block" } : { display: "none" }}
+          style={{color: "#d01c5e"}}
         >
           {title}
         </h3>
-        <p><b>{message}</b></p>
+        <p style={show ? { display: "block" } : { display: "none" }}>
+          <b>{message}</b>
+        </p>
       </div>
     </>
   );
