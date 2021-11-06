@@ -18,7 +18,7 @@ export const HeaderItemList = ({ category }) => {
 
     case ":all":
       title = "Cátalogo";
-      message = "Todos los producto juntos";
+      message = "Todos los productos juntos";
       break;
 
     default:
