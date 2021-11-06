@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import cartContext from "../../context/cartContext";
 import formContext from "../../context/formContext";
-import { InputFormUser } from "../inputformuser/InputFormUser";
+import { InputFormUser } from "../inputFormUser/InputFormUser";
 
 
 export const FormUser = () => {
